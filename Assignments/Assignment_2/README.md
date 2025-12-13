@@ -2,8 +2,9 @@
 
 A comprehensive RESTful API backend for managing vehicle rentals, built with Node.js, Express, and TypeScript.
 
-**Live Deployment:** https://vehiclerentalsystem-five.vercel.app/
 **GitHub Repo:** https://github.com/sisiam08/Next_Level_Development/tree/main/Assignments/Assignment_2
+
+**Live Deployment:** https://vehiclerentalsystem-five.vercel.app/
 
 GitHub Repo: Your GitHub Repo Link
 Your Live Deployment Link
