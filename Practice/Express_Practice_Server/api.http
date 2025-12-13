@@ -1,0 +1,23 @@
+@api = http://localhost:5000
+@admin_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsIm5hbWUiOiJKb2huIERlbyIsImVtYWlsIjoiam9obkBleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2NTM2ODA2MywiZXhwIjoxNzY1ODAwMDYzfQ.IQGV2U2WY4_hPSa8qXcMVkcKROct-suTeUqQDHyz8do
+@customer_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsIm5hbWUiOiJPc21hbiIsImVtYWlsIjoib3NtYW5AZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzY1MzcxMjg1LCJleHAiOjE3NjU4MDMyODV9.qkYsKBQoj8AdJufjhPLYz9noY25p_4KdV8yUWKtJYgo
+
+### Get All Booking (Admin)
+GET {{api}}/api/v1/bookings
+Content-Type: application/json
+Authorization: Bearer {{admin_token}}
+
+### Get All Booking (Customer)
+GET {{api}}/api/v1/bookings
+Content-Type: application/json
+Authorization: Bearer {{customer_token}}
+
+### Create item (JSON) - duplicate example
+POST {{api}}/items
+Content-Type: application/json
+# Authorization: Bearer {{token}}
+
+{
+  "name": "Widget",
+  "qty": 10
+}

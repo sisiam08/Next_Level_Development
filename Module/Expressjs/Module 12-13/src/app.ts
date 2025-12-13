@@ -13,7 +13,7 @@ app.use(express.json());
 // database create
 createDB();
 
-// demo
+// home routes
 app.get("/", logger, (req: Request, res: Response) => {
   res.send("Hello Developers!");
 });

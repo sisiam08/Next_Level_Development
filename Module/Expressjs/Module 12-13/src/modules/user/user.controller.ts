@@ -51,12 +51,6 @@ const getSingleUser = async (req: Request, res: Response) => {
         data: data.rows,
       });
     }
-
-    res.status(200).json({
-      success: true,
-      message: "Data fetch successfully",
-      data: data.rows,
-    });
   } catch (err: any) {
     res.status(500).json({
       success: false,
