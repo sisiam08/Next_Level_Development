@@ -20,7 +20,7 @@ This query retrieves complete booking details by joining three tables:
 - **users table (u)**: Joined using user_id to get the customer's name
 - **vehicles table (v)**: Joined using vehicle_id to get the vehicle's name
 
-The **INNER JOIN** ensures only bookings with matching users and vehicles are returned. The query uses column aliasing (`AS`) to rename columns for better readability in the output (e.g., `customer_name`, `vehicle_name`).
+The **INNER JOIN** ensures only bookings with matching users and vehicles are returned.
 
 ## Query 2 - Find all vehicles that have never been booked
 
@@ -39,7 +39,6 @@ This query identifies vehicles with zero bookings using the **NOT EXISTS** opera
 - The subquery checks if a vehicle_id exists in the bookings table
 - **NOT EXISTS** returns TRUE only when the subquery returns no rows (no bookings found)
 - This efficiently filters vehicles that have never been booked
-- Useful for finding unused vehicles in the fleet that may need maintenance or promotional offers
 
 ## Query 3 - Retrieve all available vehicles of a specific type (e.g. cars)
 
@@ -53,10 +52,12 @@ select * from vehicles where status = 'available' and type = 'car';
 
 **Explanation**
 
+The WHERE clause with multiple conditions:
+
 - **status = 'available'**: Selects only vehicles with an available status
-- **AND type = 'car'**: Additionally filters for vehicles of type 'car'
+- **AND type = 'car'**: Additionally filters for vehicles of type 'car' (can also use 'bike' or 'truck')
 - Both conditions must be TRUE (AND operator) for a vehicle to be included in the results
-- Useful for displaying available vehicles to customers searching by vehicle type
+- We can modify the type value to search for different vehicle categories: 'car', 'bike', or 'truck'
 
 ## Query 4 - Find the total number of bookings for each vehicle and display only those vehicles that have more than 2 bookings
 
@@ -77,4 +78,3 @@ This query uses **aggregation and filtering** to find popular vehicles:
 - **COUNT(\*)**: Counts the total number of bookings for each vehicle
 - **HAVING count(\*) > 2**: Filters groups to show only vehicles with MORE THAN 2 bookings
 - The HAVING clause filters on aggregated data (unlike WHERE which filters before grouping)
-- Useful for identifying the most frequently booked vehicles and customer preferences
