@@ -1,8 +1,8 @@
 # Vehicle Rental System
 
----
-
 ## Query 1 - Retrieve booking information along with Customer name and Vehicle name
+
+**Query:**
 
 ```cmd
 select b.booking_id, u.name as customer_name, v.name as vehicle_name, b.start_date, b.end_date, b.status from bookings as b
@@ -10,11 +10,11 @@ select b.booking_id, u.name as customer_name, v.name as vehicle_name, b.start_da
   inner join vehicles as v using(vehicle_id);
 ```
 
-**Output**
+**Output:**
 
 ![alt text](./output/query1.png)
 
-**Explanation**
+**Explanation:**
 
 This query retrieves complete booking details by joining three tables:
 
@@ -28,15 +28,17 @@ The **INNER JOIN** ensures only bookings with matching users and vehicles are re
 
 ## Query 2 - Find all vehicles that have never been booked
 
+**Query:**
+
 ```cmd
 select * from vehicles as v where not exists(select vehicle_id from bookings as b where b.vehicle_id = v.vehicle_id);
 ```
 
-**Output**
+**Output:**
 
 ![alt text](./output/query2.png)
 
-**Explanation**
+**Explanation:**
 
 This query identifies vehicles with zero bookings using the **NOT EXISTS** operator:
 
@@ -48,15 +50,17 @@ This query identifies vehicles with zero bookings using the **NOT EXISTS** opera
 
 ## Query 3 - Retrieve all available vehicles of a specific type (e.g. cars)
 
+**Query:**
+
 ```cmd
 select * from vehicles where status = 'available' and type = 'car';
 ```
 
-**Output**
+**Output:**
 
 ![alt text](./output/query3.png)
 
-**Explanation**
+**Explanation:**
 
 The WHERE clause with multiple conditions:
 
@@ -69,15 +73,17 @@ The WHERE clause with multiple conditions:
 
 ## Query 4 - Find the total number of bookings for each vehicle and display only those vehicles that have more than 2 bookings
 
+**Query:**
+
 ```cmd
 select v.name, count(*) from bookings as b inner join vehicles as v using(vehicle_id) group by v.name having count(*)>2;
 ```
 
-**Output**
+**Output:**
 
 ![alt text](./output/query4.png)
 
-**Explanation**
+**Explanation:**
 
 This query uses **aggregation and filtering** to find popular vehicles:
 
