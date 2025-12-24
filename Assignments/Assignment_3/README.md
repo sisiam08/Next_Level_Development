@@ -1,5 +1,7 @@
 # Vehicle Rental System
 
+---
+
 ## Query 1 - Retrieve booking information along with Customer name and Vehicle name
 
 ```cmd
@@ -22,6 +24,8 @@ This query retrieves complete booking details by joining three tables:
 
 The **INNER JOIN** ensures only bookings with matching users and vehicles are returned.
 
+---
+
 ## Query 2 - Find all vehicles that have never been booked
 
 ```cmd
@@ -39,6 +43,8 @@ This query identifies vehicles with zero bookings using the **NOT EXISTS** opera
 - The subquery checks if a vehicle_id exists in the bookings table
 - **NOT EXISTS** returns TRUE only when the subquery returns no rows (no bookings found)
 - This efficiently filters vehicles that have never been booked
+
+---
 
 ## Query 3 - Retrieve all available vehicles of a specific type (e.g. cars)
 
@@ -58,6 +64,8 @@ The WHERE clause with multiple conditions:
 - **AND type = 'car'**: Additionally filters for vehicles of type 'car' (can also use 'bike' or 'truck')
 - Both conditions must be TRUE (AND operator) for a vehicle to be included in the results
 - We can modify the type value to search for different vehicle categories: 'car', 'bike', or 'truck'
+
+---
 
 ## Query 4 - Find the total number of bookings for each vehicle and display only those vehicles that have more than 2 bookings
 
