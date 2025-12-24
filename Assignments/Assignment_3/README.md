@@ -10,7 +10,7 @@ select b.booking_id, u.name as customer_name, v.name as vehicle_name, b.start_da
 
 **Output**
 
-![alt text](image.png)
+![alt text](./output/query1.png)
 
 ## Query 2 - Find all vehicles that have never been booked
 
@@ -20,7 +20,7 @@ select * from vehicles as v where not exists(select vehicle_id from bookings as 
 
 **Output**
 
-![alt text](image-1.png)
+![alt text](./output/query2.png)
 
 ## Query 3 - Retrieve all available vehicles of a specific type (e.g. cars)
 
@@ -30,7 +30,7 @@ select * from vehicles where status = 'available' and type = 'car';
 
 **Output**
 
-![alt text](image-2.png)
+![alt text](./output/query3.png)
 
 ## Query 4 - Find the total number of bookings for each vehicle and display only those vehicles that have more than 2 bookings
 
@@ -40,4 +40,4 @@ select v.name, count(*) from bookings as b inner join vehicles as v using(vehicl
 
 **Output**
 
-![alt text](image-3.png)
+![alt text](./output/query4.png)
